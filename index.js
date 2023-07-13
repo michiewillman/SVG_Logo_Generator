@@ -3,17 +3,24 @@ const fs = require("fs");
 const {Circle, Square, Triangle} = require('./lib/shapes');
 const questions = require('./lib/questions');
 
+// Gets shape from answers --> calls on classes
 function getShape(answers) {
   let shape;
   switch (answers.shape) {
     case "circle":
       shape = new Circle();
+      break;
     case "square":
       shape = new Square();
+      break;
     case "triangle":
       shape = new Triangle();
+      break;
   }
   shape.setColor(answers.color);
+  shape.setText(answers.text);
+  shape.setTextColor(answers.textColor);
+  // setText and setTextColor
   return shape;
 }
 
@@ -21,7 +28,7 @@ function getShape(answers) {
 function generateSVG(data) {
   const svgContent = 
     `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
-      ${data.xml}
+      ${data.returnXML()}
       <text x="150" y="125" font-size="60" text-anchor="middle" fill="${data.textColor}">${data.text}</text>
     </svg>`;
   return svgContent;
@@ -35,6 +42,7 @@ function init() {
     return getShape(answers);
   })
   .then((response) => {
+    console.log(response);
     return generateSVG(response)
   })
   .then((content) => {
