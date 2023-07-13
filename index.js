@@ -18,7 +18,7 @@ function getShape(answers) {
       break;
   }
   shape.setColor(answers.color);
-  shape.setText(answers.text);
+  shape.setText(answers.text.toUpperCase());
   shape.setTextColor(answers.textColor);
   return shape;
 }
@@ -56,3 +56,8 @@ function init() {
 }
 
 init();
+
+
+// if (answers.text.length < 3) {
+//   console.log("Too long! Text must contain up to 3 characters.")
+// }
