@@ -27,27 +27,21 @@ function generateSVG(data) {
   return svgContent;
 }
 
-// Writes svg content to file
-function writeToFile(fileName, content) {
-  fs.writeFile(fileName, content, (error) => {
-    error ? console.log(error) : console.log("Your SVG logo has been successfully generated.")
-  });
-}
-
 // Starts application on page load/ready
 function init() {
   inquirer
   .prompt(questions)
-  .then((response) => {
-    getShape(response);
-    return newShape.render()
+  .then((answers) => {
+    return getShape(answers);
   })
   .then((response) => {
     return generateSVG(response)
   })
-  .then((response) => {
+  .then((content) => {
     // TODO: Add dynamically named svg? (ex: MW-green-circle-logo.svg)
-    writeToFile("my_logo.svg", response)
+    fs.writeFile("my_logo.svg", content, (error) => {
+      error ? console.log(error) : console.log("Your SVG logo has been successfully generated.")
+    })
   })
   .catch((error) => {
     console.log(error)
