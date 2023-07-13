@@ -8,7 +8,7 @@ This project is a Node.js command-line application that takes in user input to g
 
 The following image shows a sample generated SVG given the following input entered by the user: `MEW` for the text, `white` for the text color, `circle` from the list of shapes, and `blue` for the shape color. Note that this is just an image of the output SVG and not the SVG file itself:
 
-![Image showing a sample white and blue MEW circle logo generated using this application.]()
+![Image showing a sample white and blue MEW circle logo generated using this application.](/examples/MEW_sample_preview.png)
 
 ## Video Walkthrough of Application
 
