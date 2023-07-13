@@ -5,7 +5,7 @@ const questions = require('./lib/questions');
 
 function getShape(answers) {
   let shape;
-  switch(answers.shape){
+  switch (answers.shape) {
     case "circle":
       shape = new Circle();
     case "square":
