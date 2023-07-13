@@ -20,15 +20,14 @@ function getShape(answers) {
   shape.setColor(answers.color);
   shape.setText(answers.text);
   shape.setTextColor(answers.textColor);
-  // setText and setTextColor
   return shape;
 }
 
-// Generates svg content
+// Generates svg content --> render() pulls in shape xml string with shape fill color
 function generateSVG(data) {
   const svgContent = 
     `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
-      ${data.returnXML()}
+      ${data.render()}
       <text x="150" y="125" font-size="60" text-anchor="middle" fill="${data.textColor}">${data.text}</text>
     </svg>`;
   return svgContent;
