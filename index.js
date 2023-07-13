@@ -3,16 +3,19 @@ const fs = require("fs");
 const {Circle, Square, Triangle} = require('./lib/shapes');
 const questions = require('./lib/questions');
 
-new Shapes.Circle
-let shape
-switch(answers.shape){
-  case "circle":
-     shape=new Circle()
-    shape.setColor(answers.color)
-
+function getShape(answers) {
+  let shape;
+  switch(answers.shape){
+    case "circle":
+      shape = new Circle();
+    case "square":
+      shape = new Square();
+    case "triangle":
+      shape = new Triangle();
+  }
+  shape.setColor(answers.color);
+  return shape;
 }
-generateSVG(shape)
-
 
 // Generates svg content
 function generateSVG(data) {
@@ -35,19 +38,20 @@ function writeToFile(fileName, content) {
 function init() {
   inquirer
   .prompt(questions)
-  .then((answers) => {
-    console.log(answers);
-    const newShape = answers.shape;
+  .then((response) => {
+    getShape(response);
     return newShape.render()
   })
-  .then((shape) => {
-    return generateSVG(shape)
+  .then((response) => {
+    return generateSVG(response)
   })
-  .then((svg) => {
+  .then((response) => {
     // TODO: Add dynamically named svg? (ex: MW-green-circle-logo.svg)
-    writeToFile("my_logo.svg", svg)
+    writeToFile("my_logo.svg", response)
   })
   .catch((error) => {
     console.log(error)
   });
 }
+
+init();
