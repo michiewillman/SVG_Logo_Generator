@@ -56,8 +56,3 @@ function init() {
 }
 
 init();
-
-
-// if (answers.text.length < 3) {
-//   console.log("Too long! Text must contain up to 3 characters.")
-// }
