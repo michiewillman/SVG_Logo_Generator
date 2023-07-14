@@ -1,4 +1,4 @@
-const {Circle, Square, Triangle} = require('./lib/shapes');
+const {Circle, Square, Triangle} = require('../lib/shapes');
 
 // Gets shape from answers --> calls on classes
 function getShape(answers) {

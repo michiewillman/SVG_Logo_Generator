@@ -15,7 +15,6 @@ function init() {
     return generateSVG(response)
   })
   .then((content) => {
-    // TODO: Add dynamically named svg? (ex: MW-green-circle-logo.svg)
     fs.writeFile("my_logo.svg", content, (error) => {
       error ? console.log(error) : console.log("Your SVG logo has been successfully generated.")
     })
