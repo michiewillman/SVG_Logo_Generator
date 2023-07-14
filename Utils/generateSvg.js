@@ -29,3 +29,5 @@ function generateSVG(data) {
     </svg>`;
   return svgContent;
 }
+
+module.exports = { getShape, generateSVG };
