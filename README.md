@@ -14,7 +14,7 @@ The following image shows a sample generated SVG given the following input enter
 
 To view a video walkthrough of the application usage, [click here.](https://watch.screencastify.com/v/YmJ461GDghWuDEmiWOlx)
 
-To view a video walkthrough of the Jest test validating shape generation, [click here.]()
+To view a video walkthrough of the Jest test validating shape generation, [click here.](https://watch.screencastify.com/v/ikQT7QAKmbEQLr6nTnwf)
 
 ---
 © 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
